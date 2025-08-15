@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#facc15">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Taxímetro GPS - Speed Cabs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>⚡ SPEED CABS ⚡</h1>
+            <p>TAXÍMETRO GPS</p>
+        </header>
+
+        <main class="display">
+            <div class="cost-display">
+                <span class="currency">$</span>
+                <span id="cost">50</span>
+                <span class="currency">MXN</span>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="label">DISTANCIA</div>
+                    <div id="km" class="value">0.000 km</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="label">ESPERA</div>
+                    <div id="wait-time" class="value">00:00</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="label">ESTADO</div>
+                    <div id="status" class="value">Detenido</div>
+                </div>
+            </div>
+
+            <div id="gps-info" class="gps-info">
+                <div class="label">GPS</div>
+                <div id="gps-status" class="value">No disponible</div>
+            </div>
+        </main>
+
+        <div class="controls">
+            <button id="start-btn" class="btn btn-start">INICIAR</button>
+            <button id="pause-btn" class="btn btn-pause" disabled>PAUSAR</button>
+            <button id="resume-btn" class="btn btn-resume" disabled style="display: none;">REANUDAR</button>
+            <button id="stop-btn" class="btn btn-stop" disabled>FINALIZAR</button>
+        </div>
+    </div>
+
+    <!-- Modal de resultado del viaje -->
+    <div id="trip-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🏁 VIAJE FINALIZADO</h2>
+            </div>
+            <div class="modal-body">
+                <div class="result-item">
+                    <span class="result-label">📏 Distancia recorrida:</span>
+                    <span id="modal-distance" class="result-value">0.000 km</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">⏱️ Tiempo de espera:</span>
+                    <span id="modal-wait-time" class="result-value">0 min</span>
+                </div>
+                <div class="result-item total">
+                    <span class="result-label">💰 TOTAL A PAGAR:</span>
+                    <span id="modal-total" class="result-value total-amount">$0 MXN</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="close-modal" class="btn btn-close">CERRAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

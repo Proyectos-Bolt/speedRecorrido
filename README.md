@@ -1,2 +1,2 @@
-# speedRecorrido
-Cobro por recorrido
+# speedTaximetro
+Taximetro
